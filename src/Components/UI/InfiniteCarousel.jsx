@@ -1,0 +1,1 @@
+// The Infinite Carousel component for the hero page will be coded here.
