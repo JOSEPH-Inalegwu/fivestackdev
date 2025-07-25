@@ -9,13 +9,14 @@ const Navbar = () => {
   };
 
   return (
-    <header className="bg-base-100 shadow-lg transition-colors duration-300">
-      <nav className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
+    <header className="bg-transparent mx-2 md:mx-8 mt-3 md:mt-4">
+      <nav className="container mx-auto px-2 sm:px-4 lg:px-6 max-w-7xl">
+        {/* Desktop Top Bar */}
+        <div className="flex items-center justify-between h-16 sm:h-18 md:h-20 bg-base-100 shadow-lg transition-colors duration-300 rounded-full border border-base-300 px-4">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <a 
-              href="#" 
+            <a
+              href="#"
               className="text-base-content font-bold text-xl sm:text-2xl hover:text-[#A346E6] transition-colors duration-300"
             >
               FiveStack
@@ -49,19 +50,18 @@ const Navbar = () => {
             {/* Mobile Hamburger */}
             <div className="flex md:hidden items-center space-x-3">
               <ThemeToggle />
-              
-              <button 
+              <button
                 onClick={toggleMenu}
                 className="text-base-content hover:text-[#A346E6] focus:outline-none transition duration-300 cursor-pointer"
                 aria-label="Toggle navigation menu"
               >
-                <svg 
+                <svg
                   className={`w-7 h-7 transition-transform duration-300 ${isMenuOpen ? 'rotate-90' : ''}`}
-                  fill="none" 
+                  fill="none"
                   stroke="currentColor"
-                  strokeWidth="2" 
-                  viewBox="0 0 24 24" 
-                  strokeLinecap="round" 
+                  strokeWidth="2"
+                  viewBox="0 0 24 24"
+                  strokeLinecap="round"
                   strokeLinejoin="round"
                 >
                   {isMenuOpen ? (
@@ -75,9 +75,11 @@ const Navbar = () => {
           </div>
         </div>
 
-        {/* Mobile Menu */}
-        <div className={`md:hidden transition-all duration-300 ${isMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'} overflow-hidden`}>
-          <div className="px-2 pt-2 pb-3 space-y-1 border-t border-base-200 bg-base-100 transition-colors duration-300">
+        {/* Mobile Menu (Rectangular) */}
+        <div
+          className={`md:hidden transition-all duration-300 ${isMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'} overflow-hidden bg-base-100 border border-base-300 mt-2 rounded-lg`}
+        >
+          <div className="px-2 pt-2 pb-3 space-y-1 transition-colors duration-300">
             {["Home", "About", "Projects", "Build Logs", "Team", "Contact"].map((label, idx) => (
               <a
                 key={idx}

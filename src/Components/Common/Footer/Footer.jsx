@@ -2,7 +2,7 @@ import React from 'react';
 
 const Footer = () => {
   return (
-    <footer className="footer sm:footer-horizontal bg-base text-base-content py-10 px-4 sm:px-11 lg:px-18 transition-colors duration-300 shadow-lg">
+    <footer className="footer sm:footer-horizontal bg-base text-base-content py-10 mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl transition-colors duration-300 shadow-lg">
       <aside>
         {/* Logo */}
         <div className="flex-shrink-0">

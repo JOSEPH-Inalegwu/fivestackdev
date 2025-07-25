@@ -38,9 +38,9 @@ const Home = () => {
   }, [tabs.length]);
 
   return (
-    <section className="py-8 sm:py-10 md:py-15 lg:py-20  flex items-center bg-base-100">
+    <section className="py-8 sm:py-10 md:py-15 lg:py-20 flex items-center bg-base-100">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-        <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 md:gap-10 lg:gap-12 xl:gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 md:gap-10 lg:gap-12 items-center">
           {/* Left Section - Content */}
           <div className="space-y-6 sm:space-y-8 order-1 lg:order-1">
             <div className="space-y-4 sm:space-y-6">
