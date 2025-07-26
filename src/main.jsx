@@ -6,9 +6,8 @@ import './index.css'
 
 // Layout and Pages
 import Layout from './Layout'
-import Home from './Pages/Home/Home'
+import LandingPage from './Pages/LandingPage'
 import About from './Pages/About/About'
-import FAQ from './Pages/FAQ/FAQ'
 import NotFound from './Pages/NotFound/NotFound' 
 
 // Initialize theme-change on first load
@@ -19,9 +18,8 @@ createRoot(document.getElementById('root')).render(
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<Layout />}>
-          <Route index element={<Home />} />
+          <Route index element={<LandingPage />} />
           <Route path='about' element={<About />} />
-          <Route path='faq' element={<FAQ />} />
           {/* Add more routes here */}
           <Route path='*' element={<NotFound />} />
         </Route>
