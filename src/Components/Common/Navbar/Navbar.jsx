@@ -14,13 +14,21 @@ const Navbar = () => {
         {/* Desktop Top Bar */}
         <div className="flex items-center justify-between h-16 sm:h-18 md:h-20 bg-base-100 shadow-lg transition-colors duration-300 rounded-full border border-base-300 px-4">
           {/* Logo */}
-          <div className="flex-shrink-0">
-            <a
-              href="#"
-              className="text-base-content font-bold text-xl sm:text-2xl hover:text-[#A346E6] transition-colors duration-300"
-            >
-              FiveStack
-            </a>
+          <div className="flex items-center space-x-0.5">
+            {/* Light Theme Image - shows by default and in light mode */}
+            <img
+              src="/logo-Fivestack.svg"
+              className="w-10 h-10 border border-base-300 block [[data-theme=synthwave]_&]:hidden"
+              alt="FiveStack Logo Light"
+            />
+            
+            {/* Dark Theme Image - hidden by default */}
+            <img
+              src="/5stack00.svg"
+              className="w-10 border border-base-300 h-10 hidden [[data-theme=synthwave]_&]:block"
+              alt="FiveStack Logo Dark"
+            />
+            <h3 className="font-bold text-2xl text-base-content">Stack</h3>
           </div>
 
           {/* Desktop Links */}
