@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { ArrowRight, Code, Zap, Users, Terminal, GitBranch, Database, Cpu } from 'lucide-react';
+import TextType from '../../Components/Reactbits/TextType/TextType';
 
 const Home = () => {
   const [activeTab, setActiveTab] = useState(0);
@@ -49,14 +50,23 @@ const Home = () => {
                 Building the future of web solutions
               </div>
               
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight animate-fade-in-up animation-delay-200">
-                <span className="text-base-content">Modern solutions</span>
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+                <span className="text-gray-800 dark:text-gray-100">
+                  <TextType
+                    className="text-base-content"
+                    text={["Modern solutions", "Smart approaches", "Innovative ideas"]}
+                    typingSpeed={75}
+                    pauseDuration={900}
+                    showCursor={true}
+                    cursorCharacter="|"
+                  />
+                </span>
                 <br />
-                <span className="text-[#A346E6] bg-gradient-to-r from-[#A346E6] to-[#8c3bc7] bg-clip-text">
+                <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
                   for real problems
                 </span>
               </h1>
-              
+
               <p className="text-base sm:text-lg lg:text-xl text-base-content/70 leading-relaxed max-w-xl animate-fade-in-up animation-delay-400">
                 We build scalable web solutions that solve your pain points. Our collaborative team crafts digital products with clean design, efficient code, and user-first experiences.
               </p>
