@@ -1,4 +1,5 @@
 import React, { useRef, useEffect, useState } from 'react'
+import { ToastContainer } from 'react-toastify'
 import TeamCard from './TeamCard'
 
 const Team = () => {
@@ -17,7 +18,8 @@ const Team = () => {
       handle: 'josephjonah',
       status: 'Online',
       avatarUrl: '/image/jose.jpg',
-      contactText: 'See Portfolio'
+      contactText: 'See Portfolio',
+      // portfolioUrl: ''
     },
     {
       name: 'Samuel Evelyn',
@@ -93,6 +95,9 @@ const Team = () => {
 
   // Auto-scroll logic
   useEffect(() => {
+    // Don't start interval if hovered
+    if (isHovered) return
+
     const interval = setInterval(() => {
       const container = scrollRef.current
       if (!container) return
@@ -103,10 +108,10 @@ const Team = () => {
 
       container.scrollTo({ left: nextScrollLeft, behavior: 'smooth' })
       setActiveIndex(nextIndex)
-    }, 10000)
+    }, 7000)
 
     return () => clearInterval(interval)
-  }, [activeIndex, cards.length, visibleCards]) // Added visibleCards dependency
+  }, [activeIndex, cards.length, visibleCards, isHovered]) // Added isHovered dependency
 
   return (
     <div className="py-8 sm:py-10 md:py-15 lg:py-20 flex items-center bg-base-100">
@@ -122,7 +127,12 @@ const Team = () => {
           </p>
         </div>
 
-        <div className="overflow-x-auto hide-scrollbar" ref={scrollRef}>
+        <div 
+          className="overflow-x-auto hide-scrollbar" 
+          ref={scrollRef}
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+        >
           <div className="flex gap-6 w-max">
             {cards.map((member, index) => (
               <div
@@ -146,6 +156,11 @@ const Team = () => {
             />
           ))}
         </div>
+
+        <ToastContainer
+          position="top-right" 
+          autoClose={3000}
+          />
       </div>
     </div>
   )
