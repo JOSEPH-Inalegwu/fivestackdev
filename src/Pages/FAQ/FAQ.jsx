@@ -48,7 +48,7 @@ const FAQ = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-base-200 text-base-content transition-colors duration-300">
+    <div className="min-h-screen bg-base-100 text-base-content transition-colors duration-300">
       <div className="max-w-7xl px-4 sm:px-6 md:px-8 py-16 mx-auto">
         {/* Header Section */}
         <div className="text-center mb-16">

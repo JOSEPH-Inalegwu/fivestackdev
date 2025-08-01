@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ArrowRight, Code, Zap, Users, Terminal, GitBranch, Database, Cpu } from 'lucide-react';
+import { ArrowRight, Code, Zap, Users, Terminal, GitBranch, Database, Cpu, ArrowDown } from 'lucide-react';
 import TextType from '../../Components/Reactbits/TextType/TextType';
 
 const Home = () => {
@@ -56,7 +56,7 @@ const Home = () => {
                     className="text-base-content"
                     text={["Modern solutions", "Smart approaches", "Innovative ideas"]}
                     typingSpeed={75}
-                    pauseDuration={900}
+                    pauseDuration={700}
                     showCursor={true}
                     cursorCharacter="|"
                   />
@@ -75,7 +75,7 @@ const Home = () => {
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 animate-fade-in-up animation-delay-600">
               <button className="btn btn-lg bg-[#A346E6] hover:bg-[#8c3bc7] border-none text-white px-6 sm:px-8 hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center">
                 Get Started
-                <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
+                <ArrowDown className="w-4 h-4 sm:w-5 sm:h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300 animate-bounce" />
               </button>
               
               <button className="btn btn-lg btn-outline border-base-300 hover:border-[#A346E6] hover:bg-[#A346E6] hover:text-white px-6 sm:px-8 hover:scale-105 transition-all duration-300">
