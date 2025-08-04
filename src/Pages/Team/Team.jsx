@@ -3,7 +3,7 @@ import { ToastContainer } from 'react-toastify'
 import TeamCard from './TeamCard'
 import TeamValues from './TeamValues'
 
-const Team = () => {
+const Team = ({ showTeamValues = true }) => {
   const scrollRef = useRef(null)
   const [activeIndex, setActiveIndex] = useState(0)
   const [visibleCards, setVisibleCards] = useState(3)
@@ -172,9 +172,14 @@ const Team = () => {
           ))}
         </div>
 
-        <div>
-          <TeamValues />
-        </div>
+
+        {/* Team Stats Section - Only show if true */}
+        {showTeamValues && (
+          <div>
+            <TeamValues />
+          </div>
+        )}
+
 
         <ToastContainer
           position="top-right" 
