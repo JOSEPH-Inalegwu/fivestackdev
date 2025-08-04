@@ -1,6 +1,7 @@
 import React, { useRef, useEffect, useState } from 'react'
 import { ToastContainer } from 'react-toastify'
 import TeamCard from './TeamCard'
+import TeamValues from './TeamValues'
 
 const Team = () => {
   const scrollRef = useRef(null)
@@ -93,6 +94,18 @@ const Team = () => {
     return positions
   }
 
+  // Handle indicator click
+  const handleIndicatorClick = (index) => {
+    const container = scrollRef.current
+    if (!container) return
+
+    const scrollPositions = getScrollPositions()
+    const targetScrollLeft = scrollPositions[index]
+
+    container.scrollTo({ left: targetScrollLeft, behavior: 'smooth' })
+    setActiveIndex(index)
+  }
+
   // Auto-scroll logic
   useEffect(() => {
     // Don't start interval if hovered
@@ -146,15 +159,21 @@ const Team = () => {
         </div>
 
         {/* Indicator Dots */}
-        <div className="flex justify-center mt-6 space-x-2">
+        <div className="flex justify-center mt-6 space-x-2 cursor-pointer">
           {Array.from({ length: cards.length - visibleCards + 1 }).map((_, idx) => (
-            <span
+            <button
               key={idx}
-              className={`h-3 w-3 rounded-full ${
-                activeIndex === idx ? 'bg-purple-500' : 'bg-gray-300'
-              } transition-all`}
+              onClick={() => handleIndicatorClick(idx)}
+              className={`h-3 w-3 rounded-full transition-all duration-300 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-opacity-50 ${
+                activeIndex === idx ? 'bg-purple-500' : 'bg-gray-300 hover:bg-gray-400'
+              }`}
+              aria-label={`Go to team member group ${idx + 1}`}
             />
           ))}
+        </div>
+
+        <div>
+          <TeamValues />
         </div>
 
         <ToastContainer
